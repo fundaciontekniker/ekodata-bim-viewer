@@ -1,0 +1,20 @@
+{
+  "id": "Ekodata",
+  "name": "Ekodata",
+  "models": [
+    {
+      "id": "design",
+      "name": "Ekodata Model"
+    }
+  ],
+  "viewerConfigs": {},
+  "viewerContent": {
+    "modelsLoaded": ["design"]
+  },
+  "viewerState": {
+    "tabOpen": "objects",
+    "expandObjectsTree": 1,
+    "expandClassesTree": 1,
+    "expandStoreysTree": 1
+  }
+}
