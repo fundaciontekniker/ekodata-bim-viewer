@@ -1,0 +1,1 @@
+docker build -t ekodata-bim-viewer:1.0.0 .
