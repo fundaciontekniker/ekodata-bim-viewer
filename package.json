@@ -49,6 +49,7 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "dependencies": {
+    "@microsoft/signalr": "^8.0.0",
     "@xeokit/xeokit-sdk": "2.5.2-beta-29",
     "http-server": "^13.0.2"
   }
