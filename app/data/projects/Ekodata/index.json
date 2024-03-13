@@ -1,15 +1,15 @@
 {
-  "id": "Ekodata",
+  "id": "ekodata",
   "name": "Ekodata",
   "models": [
     {
-      "id": "design",
-      "name": "Ekodata Model"
+      "id": "ifc",
+      "name": "Ekodata IFC"
     }
   ],
   "viewerConfigs": {},
   "viewerContent": {
-    "modelsLoaded": ["design"]
+    "modelsLoaded": ["ifc"]
   },
   "viewerState": {
     "tabOpen": "objects",
