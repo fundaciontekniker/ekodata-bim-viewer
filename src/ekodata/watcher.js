@@ -1,7 +1,10 @@
-const Consumer = (function() {
-    function connectToHub(hostUrl) {
+
+import * as signalR from "@microsoft/signalr";
+
+const Watcher = (function() {
+    function connectToHub(hubUrl) {
         const hubConnection = new signalR.HubConnectionBuilder()
-            .withUrl(url, {
+            .withUrl(hubUrl, {
                 skipNegotiation: true,
                 transport: signalR.HttpTransportType.WebSockets,
                 withCredentials: false
@@ -9,13 +12,12 @@ const Consumer = (function() {
             .configureLogging(signalR.LogLevel.Information)
             .build();
         hubConnection.start()
-            .then(() => console.log(`Conexión establecida con el Hub ${url}`))
+            .then(() => console.log(`Connection established with the Hub ${hubUrl}`))
             .catch(err => console.error(err));
-
         return hubConnection;
     }
-    function connectToViewer(hostUrl, onModelReceived = null) {
-        const hubConnection = connectToHub(`${hostUrl}/viewer`);
+    function connectToViewer(hubUrl, onModelReceived = null) {
+        const hubConnection = connectToHub(`${hubUrl}/viewer`);
         if (onModelReceived) {
             hubConnection.on("ReceiveConvertedFileAsync", onModelReceived);
         }
@@ -26,4 +28,4 @@ const Consumer = (function() {
     };
 })();
 
-export { Consumer };
+export { Watcher };
