@@ -43,31 +43,28 @@
     </div>
   </body>
 
-  <!-- Settings file (Added by Tekniker) -->
-  <script src="./settings/consumer.config.js"></script>
-
   <!-- Tooltips libraries -->
   <script src="./lib/popper.js"></script>
   <script src="./lib/tippy.js"></script>
-  <script src="./lib/tippy.js"></script>
+  <script src="./settings/ekodata-watcher.config.js"></script>
 
-  <!-- Main -->
   <script type="module">
-    import { tippy } from "";
-    import { messages as localeMessages } from "../dist/messages.js";
     import {
-      Consumer,
       Server,
       BIMViewer,
       LocaleService,
+      Watcher,
     } from "../dist/xeokit-bim-viewer.es.js";
 
+    import { messages as localeMessages } from "../dist/messages.js";
+
     window.onload = function () {
-      // Update model (Added by Tekniker)
-      Consumer.connectToViewerHub(consumerConfig.hubUrl, (filePath) => {
+      // ******************************************************************** Added by Tekniker
+      Watcher.connectToViewer(watcherConfig.hubUrl, (filePath) => {
         console.log("A new model has been uploaded: " + filePath);
         window.location.reload();
       });
+      // ******************************************************************** Added by Tekniker
 
       const requestParams = getRequestParams();
       const locale = requestParams.locale || "en";
