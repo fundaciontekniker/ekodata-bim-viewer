@@ -1,3 +1,3 @@
 const watcherConfig = {
-    hubUrl: "http://localhost:5155"
+    hubUrl: "http://api:8080"
 };

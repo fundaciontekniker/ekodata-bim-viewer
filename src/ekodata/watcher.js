@@ -3,6 +3,7 @@ import * as signalR from "@microsoft/signalr";
 
 const Watcher = (function() {
     function connectToHub(hubUrl) {
+        console.log(`Connecting with the Hub ${hubUrl}`);
         const hubConnection = new signalR.HubConnectionBuilder()
             .withUrl(hubUrl, {
                 skipNegotiation: true,
